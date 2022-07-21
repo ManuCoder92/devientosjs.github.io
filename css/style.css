@@ -265,3 +265,22 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+
+
+
+.tarjetas img {
+
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  background-color: antiquewhite;
+  color:black;
+  transition: ease 1s;
+}
+
+.darkMode {
+  background-color: black;
+  color:white;
+}

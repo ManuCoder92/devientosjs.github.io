@@ -1,23 +1,21 @@
- function saludar () {
-     let nombre = prompt ("Por favor ingrese su nombre ")
-     alert("Bienvenido a devientos"+" "+nombre+" "+".A continuación tendrá nuestro catálogo de instrumentos")   }
+//  function saludar () {
+//      let nombre = prompt ("Por favor ingrese su nombre ")
+//      alert("Bienvenido a devientos"+" "+nombre+" "+".A continuación tendrá nuestro catálogo de instrumentos")   }
 
- saludar ()
+//  saludar ()
 
 
 
 
 class Producto {
-    constructor (id, nombre, tipo, registro, precio, descuento,stock, reviews, marca ){
+    constructor (id, nombre,registro, precio, descuento,stock, imagen ){
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
         this.registro = registro;
         this.precio = parseFloat(precio);
         this.descuento = parseFloat(descuento);
         this.stock = parseFloat(stock);
-        this.stock = stock
-        this.marca = marca
+        this.imagen = imagen
     }
 
 }
@@ -30,50 +28,50 @@ class Producto {
 
 
 
-const eastar = new Producto (1,"Eastar","alto","bart",100,10,30,4,"vw")
-const pepito = new Producto (2,"pepito","alto","lisa",200,10,40,4,"peugote")
-const larala = new Producto (3,"larala","alto","homero",300,20,10,4,"chevrole")
-const esponja = new Producto (4,"esponja","alto","magui",500,40,33,4,"fiat")
+const eastar = new Producto (1,"Eastar","alto",350,20,30, `multimedia/easterAlto.jpg` ) // Link : https://www.amazon.es/Eastar-EB134-FBA-CA-Saxof%C3%B3n-alto/dp/B07HL8YNJH/ref=sr_1_7?crid=19THTKU8JB9VS&keywords=saxofon+alto&qid=1657877947&sprefix=%2Caps%2C675&sr=8-7
+const jMichael = new Producto (2,"J. Michael AL500","alto",423,122,40,`multimedia/jMichael.jpg`) // Link: https://www.amazon.es/J-Michael-AL500-Saxo-alto/dp/B001IY8XAQ/ref=sr_1_5?crid=19THTKU8JB9VS&keywords=saxofon+alto&qid=1657877947&sprefix=%2Caps%2C675&sr=8-5
+const bter = new Producto (3,"BTER","alto",497,30,10,`multimedia/bter.jpg`)  // link : https://www.amazon.es/profesional-Instrumentos-musicales-estudiantes-principiantes/dp/B09B162G7Q/ref=sr_1_1_sspa?crid=19THTKU8JB9VS&keywords=saxofon%2Balto&qid=1657877947&sprefix=%2Caps%2C675&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE1WjVQUTZNTzM5TjcmZW5jcnlwdGVkSWQ9QTA0OTY5OTkyTEVZNkVBUUlUTDVGJmVuY3J5cHRlZEFkSWQ9QTAxNzEwNzQySjdMSzA1TEFZM01PJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1
+const sasuori = new Producto (4,"sasuori","alto",249,10,33,`multimedia/sasuori.jpg`) // link: https://www.amazon.es/Sasuori-Profesional-saxof%C3%B3n-Dominante-Limpieza/dp/B09L1FCLQ9/ref=sr_1_8?crid=19THTKU8JB9VS&keywords=saxofon%2Balto&qid=1657877947&sprefix=%2Caps%2C675&sr=8-8&th=1
 
 
-const saxoAlto = [eastar,pepito,larala,esponja]
+const saxoAlto = [eastar,jMichael,bter,sasuori]
 
 //mostramos en consola el array formado por los objetos y seleccionamos el que esta en el indice numero 3 
 console.log (saxoAlto)
 console.log (saxoAlto [3])
 
-function pedido () {
-  let pedido = parseFloat(prompt("Seleccione el numero de saxo que desea comprar y se lo mostraremos. 1)easter 2)pepito 3)larala 4)esponja" ))
-  switch (pedido) {
-    case 1: 
-    alert (eastar);
-    break;
-    case 2:
-      alert (pepito);
-      break;
-    case 3: 
-    alert (larala);
-    break;
-    case 4 :
-        alert (esponja)
-    default: 
-    alert ("No se lo que me pediste pero no lo tengo");
-    break;
+// function pedido () {
+//   let pedido = parseFloat(prompt("Seleccione el numero de saxo que desea comprar y se lo mostraremos. 1)easter 2)bter 3)jMichael 4)sasuori" ))
+//   switch (pedido) {
+//     case 1: 
+//     alert (eastar);
+//     break;
+//     case 2:
+//       alert (bter);
+//       break;
+//     case 3: 
+//     alert (jMichael);
+//     break;
+//     case 4 :
+//         alert (sasuori)
+//     default: 
+//     alert ("No se lo que me pediste pero no lo tengo");
+//     break;
 
-  }
-}
+//   }
+// }
 
-pedido()
+// pedido()
 
 /*Vamos a probar algunos métodos que pueden ser de utilidad para la pagina
 Primero nos consultan por el saxo larala y verificamos su existencia en la categoría saxoAlto
 Segundo voy a quitar el último elemento del array y posteriormente lo voy a volver a ingresar en su mismo lugar*/
 
-console.log (saxoAlto.includes(larala))
-saxoAlto.pop()
-console.log (saxoAlto)
-saxoAlto.push (esponja)
-console.log (saxoAlto)
+// console.log (saxoAlto.includes(bter))
+// saxoAlto.pop()
+// console.log (saxoAlto)
+// saxoAlto.push (bter)
+// console.log (saxoAlto)
 
 
 //Ahora intentaremos recorrer nuestro array de saxoAlto con la sentencia for... of. *******NECESITO AYUDA EN ESTE CICLO**************
@@ -251,4 +249,47 @@ main.innerText = "Hola amigos"
 main.innerHTML = "<h3>Wasaaaa</h3>"
 
 console.log (main)
+
+
+
+const cards = document.getElementById ("tarjetas");
+
+
+for (let saxoIndividual of saxoAlto){
+    tarjetas.innerHTML +=  `
+    <div clas = "contenedorTarjeta">
+    <h3>${saxoIndividual.nombre} </h3>
+    <p>Precio: ${saxoIndividual.precio}</p>
+    <img scr="${saxoIndividual.imagen}">
+    </div>    
+    `
+            
+     }
+    
+    
+     botonDarkMode.addEventListener("click", () => {
+      
+        document.body.classList.add('darkMode')
+        localStorage.setItem('theme', "dark")  
+     })
+     botonLightMode.addEventListener('click', () => {
+      
+         document.body.classList.remove('darkMode')
+         localStorage.setItem('theme', "light")  
+     })    
+    
+    
+    
+    
+
+const negrote = document.getElementById("negrote")
+const blanquin = document.getElementById("blanquin")
+
+
+botonDarkMode.onclick = () => {
+    console.log("Di click en boton de para que la pantalla se ponga oscura")
+}
+botonLightMode.onclick = () => {
+    console.log("Di click en boton de para que la pantalla se ponga blanca")
+}
 
